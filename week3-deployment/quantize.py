@@ -39,7 +39,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def format_float_array(name: str, values: np.ndarray) -> str:
-    body = ", ".join(f"{float(value):.9g}f" for value in values)
+    body = ", ".join(f"{float(value):.9e}f" for value in values)
     return f"constexpr float {name}[] = {{{body}}};"
 
 
