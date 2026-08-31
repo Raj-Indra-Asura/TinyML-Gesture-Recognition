@@ -62,12 +62,16 @@ def main() -> int:
         except (KeyError, TypeError, ValueError, json.JSONDecodeError) as error:
             errors.append(f"could not read test accuracy: {error}")
 
-    demo_files = [
-        path
-        for path in demo_dir.iterdir()
-        if path.suffix.lower() in {".gif", ".mp4", ".mov", ".webm"}
-        and path.stat().st_size >= 1000
-    ]
+    demo_files = (
+        [
+            path
+            for path in demo_dir.iterdir()
+            if path.suffix.lower() in {".gif", ".mp4", ".mov", ".webm"}
+            and path.stat().st_size >= 1000
+        ]
+        if demo_dir.is_dir()
+        else []
+    )
     if not demo_files:
         errors.append("demo/ needs a substantive GIF or video of live inference")
 
