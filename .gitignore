@@ -5,6 +5,6 @@ week1-data-foundations/data/*.csv
 week2-model-training/prepared_data.npz
 week2-model-training/models/*
 !week2-model-training/models/.gitkeep
-week3-deployment/model_data.h
+week3-deployment/arduino/gesture_infer/model_data.h
 week3-deployment/demo/*
 !week3-deployment/demo/README.md
