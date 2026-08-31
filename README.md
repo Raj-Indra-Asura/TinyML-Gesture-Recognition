@@ -32,17 +32,60 @@ In Arduino IDE, install the **Arduino_BMI270_BMM150** library in Week 1. Install
 
 ## Course index
 
-1. [Week 1 — Data Foundations](week1-data-foundations/learning.md): connect the
-   board, understand its motion sensor, and collect trustworthy examples.
-2. [Week 2 — Model Training](week2-model-training/learning.md): turn recordings
-   into fixed-size examples, train a neural network, and measure it honestly.
-3. [Week 3 — Deployment](week3-deployment/learning.md): compress the model,
-   run live predictions, and produce a portfolio demo.
+Each week has two documents. Read the week's `README.md` first for the
+overview, the deliverables, and the repository structure at the end of that
+week. Then work through its `learning.md`, which is a complete, self-contained
+lesson: every instruction, explanation, command, expected output, code
+walkthrough, and troubleshooting table you need. You should not need any other
+book, video, or website.
 
-Follow the weeks in order. Read each concept section before running its code.
-Use [PROGRESS.md](PROGRESS.md) as the course checklist and [NOTES.md](NOTES.md)
-as your experiment log. Paths in commands assume you are at the repository
-root.
+The project is built sequentially, each week completing a defined share of it:
+
+| Week | Overview | Full lesson | Delivers | Cumulative completion |
+| --- | --- | --- | --- | --- |
+| 1 — Data Foundations | [README](week1-data-foundations/README.md) | [learning.md](week1-data-foundations/learning.md) | Board brought up, sensor streaming, 45+ labeled recordings validated | **35%** |
+| 2 — Model Training | [README](week2-model-training/README.md) | [learning.md](week2-model-training/learning.md) | Fixed-size normalized examples, leak-free splits, trained model, measured accuracy | **75%** |
+| 3 — Deployment | [README](week3-deployment/README.md) | [learning.md](week3-deployment/learning.md) | Quantized model, C header, live inference, field test, demo, limitations | **100%** |
+
+Follow the weeks in order; each one depends on the artifacts the previous week
+produced. Read each concept section before running its code. Use
+[PROGRESS.md](PROGRESS.md) as the course checklist and [NOTES.md](NOTES.md) as
+your experiment log. Paths in commands assume you are at the repository root.
+
+## Repository layout
+
+These are the files tracked in Git. Each week's `README.md` also shows the full
+structure, including the files you generate locally, as it will look at the end
+of that week.
+
+```text
+TinyML-Gesture-Recognition/
+├── README.md                     # this page
+├── PROGRESS.md                   # course checklist
+├── NOTES.md                      # your experiment log
+├── week1-data-foundations/
+│   ├── README.md                 # Week 1 overview and structure
+│   ├── learning.md               # Week 1 complete lesson
+│   ├── collect_data.py
+│   ├── validate_week1.py
+│   ├── arduino/stream_imu/stream_imu.ino
+│   └── data/.gitkeep
+├── week2-model-training/
+│   ├── README.md                 # Week 2 overview and structure
+│   ├── learning.md               # Week 2 complete lesson
+│   ├── prepare_data.py
+│   ├── train.ipynb
+│   ├── validate_week2.py
+│   └── models/.gitkeep
+└── week3-deployment/
+    ├── README.md                 # Week 3 overview and structure
+    ├── learning.md               # Week 3 complete lesson
+    ├── quantize.py
+    ├── live_infer.py
+    ├── validate_week3.py
+    ├── arduino/gesture_infer/gesture_infer.ino
+    └── demo/README.md
+```
 
 ## Data and generated artifacts
 
